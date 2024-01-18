@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class Factory {
+public  class Factory {
 
-    public FlagEntity Factory_Create_Flag(GameCtx gameCtx, int typeID, Vector2 pos) {
+    public FlagEntity Factory_Create_Flag(GameCtx gameCtx, int typeID) {
         
         FlagTemplate tm = gameCtx.tpl.GetFlag(typeID);
 

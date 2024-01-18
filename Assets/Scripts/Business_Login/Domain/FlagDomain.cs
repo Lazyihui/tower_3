@@ -11,7 +11,13 @@ public static class FlagDomain {
 
         FlagEntity entity = GameObject.Instantiate(prefab);
 
-        
+        entity.Ctor();
+        entity.SetPos(pos);
+        entity = gameCtx.fty.Factory_Create_Flag(gameCtx, typeID);
+        entity.id = gameCtx.flagID++;
+
+        gameCtx.flagRepository.Add(entity);
+
         return entity;
     }
 }
