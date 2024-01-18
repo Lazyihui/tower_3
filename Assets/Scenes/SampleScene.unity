@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pn_login: {fileID: 6221806432171905096, guid: 30a721ed36e442743bdaba580a9810b0, type: 3}
+  flagEntity: {fileID: 141705018457022943, guid: 0ea1a00136bff1a43a268a2b9a2b5bb9, type: 3}
 --- !u!4 &355715686
 Transform:
   m_ObjectHideFlags: 0

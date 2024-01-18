@@ -9,12 +9,24 @@ public class ClientMain : MonoBehaviour {
         AssetsCtx assetsCtx = gameObject.GetComponentInChildren<AssetsCtx>();
         Canvas canvas = gameObject.GetComponentInChildren<Canvas>();
         ClientCtx ctx = new ClientCtx();
-        // ctx.uictx.assetsCtx = assetsCtx;
-        // ctx.uictx.canvas = canvas;
-        ctx.uictx.Inject(canvas,assetsCtx);
+
+        Vector2 self = new Vector2();
+        // f(o), fucntion object
+        // C: fuction(&self)
+
+        // o.f()
+        // C#: self.function()
+
+        Vector2 pos = new Vector2(1, 3);
+        pos.Normalize();
+        Vector2 other = new Vector2(2, 3);
+        Vector2 max = Vector2.Max(new Vector2(1, 3), new Vector2(2, 2));
+
+        ctx.Inject(canvas, assetsCtx);
         Debug.Log("hello world");
         UIApp.PN_Login_Open(ctx.uictx);
     }
+
 
     // Update is called once per frame
     void Update() {
