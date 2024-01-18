@@ -14,7 +14,6 @@ public static class UIApp {
         }
         panel.Show();
         //这个？
-        EventSystem.current.SetSelectedGameObject(panel.startBtn.gameObject);
 
     }
 

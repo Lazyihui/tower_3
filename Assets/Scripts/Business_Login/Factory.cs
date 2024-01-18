@@ -5,10 +5,12 @@ public static class Factory {
 
     public static FlagEntity Factory_Create_Flag(GameCtx gameCtx, int typeID, Vector2 pos) {
 
+        // prefab: 模具
         FlagEntity prefab = gameCtx.assetsCtx.flagEntity;
 
         FlagTemplate tm = gameCtx.tpl.GetFlag(typeID);
-
+        
+        // instance: 实例(蛋糕)
         FlagEntity entity = GameObject.Instantiate(prefab);
         //monobehaviour -ctor ==init
         entity.Ctor();
