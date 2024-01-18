@@ -1,16 +1,21 @@
 using System;
 using UnityEngine;
 
-public  class Factory {
+public static class Factory {
 
-    public FlagEntity Factory_Create_Flag(GameCtx gameCtx, int typeID) {
-        
+    public static FlagEntity Factory_Create_Flag(GameCtx gameCtx, int typeID, Vector2 pos) {
+
+        FlagEntity prefab = gameCtx.assetsCtx.flagEntity;
+
         FlagTemplate tm = gameCtx.tpl.GetFlag(typeID);
 
-        FlagEntity entity = new FlagEntity();
-
-        entity.color = tm.color;
+        FlagEntity entity = GameObject.Instantiate(prefab);
+        //monobehaviour -ctor ==init
+        entity.Ctor();
+        entity.SetColor(tm.color);
         entity.typeID = tm.typeID;
+        entity.SetPos(pos);
+        entity.id = gameCtx.flagID++;
 
         return entity;
     }

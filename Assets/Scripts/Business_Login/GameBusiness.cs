@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public static class GamesBussiness {
+public static class GamesBusiness {
     public static void Enter(GameCtx gameCtx) {
         Debug.Log("EnterGame");
 
-        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -5));
+        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, 0));
 
     }
     // 每帧一次

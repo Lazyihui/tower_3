@@ -7,7 +7,6 @@ public class GameCtx {
 
     public Template tpl;
 
-    public Factory fty;
     public int flagID;
 
     //==GameCtxInit
@@ -15,8 +14,6 @@ public class GameCtx {
 
         tpl = new Template();
 
-        fty = new Factory ();
-        
         flagRepository = new FlagRepository();
         tpl.FlagTemplate_Init();
         flagID = 0;

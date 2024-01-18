@@ -7,14 +7,7 @@ public static class FlagDomain {
 
         // prefab: 模具
         // instance: 实例(蛋糕)
-        FlagEntity prefab = gameCtx.assetsCtx.flagEntity;
-
-        FlagEntity entity = GameObject.Instantiate(prefab);
-
-        entity.Ctor();
-        entity.SetPos(pos);
-        entity = gameCtx.fty.Factory_Create_Flag(gameCtx, typeID);
-        entity.id = gameCtx.flagID++;
+        FlagEntity entity = Factory.Factory_Create_Flag(gameCtx, typeID,pos);
 
         gameCtx.flagRepository.Add(entity);
 
