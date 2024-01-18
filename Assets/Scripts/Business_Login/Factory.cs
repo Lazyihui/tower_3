@@ -9,8 +9,9 @@ public class Factory {
 
         FlagEntity entity = new FlagEntity();
 
-        
+        entity.color = tm.color;
+        entity.typeID = tm.typeID;
 
-        return ;
+        return entity;
     }
 }
