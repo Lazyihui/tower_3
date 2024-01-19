@@ -31,6 +31,8 @@ public class TowerRepository {
 
 
 
+
+
     }
     public int TakeAll(out TowerEntity[] array) {
         all.Values.CopyTo(tempArray, 0);
