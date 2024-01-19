@@ -213,7 +213,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1850771466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pn_login: {fileID: 6221806432171905096, guid: 30a721ed36e442743bdaba580a9810b0, type: 3}
   flagEntity: {fileID: 141705018457022943, guid: 0ea1a00136bff1a43a268a2b9a2b5bb9, type: 3}
+  towerEntity: {fileID: 248838931586203502, guid: fca33a95bd260574e9360b164cd3fd09, type: 3}
 --- !u!4 &355715686
 Transform:
   m_ObjectHideFlags: 0
@@ -424,7 +425,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1850771466}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1850771464
 GameObject:
@@ -470,7 +471,7 @@ Transform:
   m_Children:
   - {fileID: 355715686}
   - {fileID: 519420032}
-  - {fileID: 1075296963}
+  - {fileID: 325234029}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -478,4 +479,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1850771466}
-  - {fileID: 325234029}
+  - {fileID: 1075296963}

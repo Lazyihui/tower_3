@@ -7,4 +7,5 @@ public class AssetsCtx : MonoBehaviour {
     public FlagEntity flagEntity;
 
     public TowerEntity towerEntity;
+
 }
