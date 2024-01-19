@@ -13,7 +13,6 @@ public static class UIApp {
             panel.OnstartClickHandle = OnstartClickHandle;
         }
         panel.Show();
-        //这个？
 
     }
 

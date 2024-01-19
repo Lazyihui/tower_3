@@ -11,9 +11,7 @@ public class ClientMain : MonoBehaviour {
 
 
         AssetsCtx assetsCtx = gameObject.GetComponentInChildren<AssetsCtx>();
-
         Canvas canvas = gameObject.GetComponentInChildren<Canvas>();
-        CanvasScaler scaler = canvas.gameObject.GetComponent<CanvasScaler>();
 
         ClientCtx ctx = new ClientCtx();
         ctx.Inject(canvas, assetsCtx);

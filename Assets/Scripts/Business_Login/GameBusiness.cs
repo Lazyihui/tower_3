@@ -5,7 +5,7 @@ public static class GamesBusiness {
     public static void Enter(GameCtx gameCtx) {
         Debug.Log("EnterGame");
 
-        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, 0));
+        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4));
 
     }
     // 每帧一次
