@@ -9,6 +9,7 @@ public class Template {
 
     public Dictionary<int, TowerTemplate> towerDict;
 
+    public Dictionary<int, MstTemplate> mstDict;
 
     public void FlagTemplate_Init() {
 
@@ -28,6 +29,17 @@ public class Template {
         towerDict.Add(1, t1);
         towerDict.Add(2, t2);
     }
+
+    public void MstTemplate_Init() {
+        MstTemplate m1 = new MstTemplate(1, 4.5f, Color.red);
+        MstTemplate m2 = new MstTemplate(2, 5.5f, Color.yellow);
+
+        mstDict = new Dictionary<int, MstTemplate>();
+        mstDict.Add(1, t1);
+        mstDict.Add(2, t2);
+
+    }
+
     public FlagTemplate GetFlag(int typeID) {
         FlagTemplate value; // * ref out
         bool exist = flagDict.TryGetValue(typeID, out value);
@@ -48,5 +60,13 @@ public class Template {
         return value;
     }
 
-
+    public MstEntity GetMst(int typeID) {
+        MstTemplate value;
+        bool exist = mstDict.TryGetValue(typeID, out value);
+        if (!exist) {
+            Debug.LogError("not exist " + typeID.ToString());
+            return null;
+        }
+        return value;
+    }
 }
