@@ -35,8 +35,8 @@ public class Template {
         MstTemplate m2 = new MstTemplate(2, 5.5f, Color.yellow);
 
         mstDict = new Dictionary<int, MstTemplate>();
-        mstDict.Add(1, t1);
-        mstDict.Add(2, t2);
+        mstDict.Add(1, m1);
+        mstDict.Add(2, m2);
 
     }
 
@@ -60,7 +60,7 @@ public class Template {
         return value;
     }
 
-    public MstEntity GetMst(int typeID) {
+    public MstTemplate GetMst(int typeID) {
         MstTemplate value;
         bool exist = mstDict.TryGetValue(typeID, out value);
         if (!exist) {
