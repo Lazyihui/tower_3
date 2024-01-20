@@ -7,21 +7,42 @@ public class Template {
 
     public Dictionary<int, FlagTemplate> flagDict;
 
+    public Dictionary<int, TowerTemplate> towerDict;
+
+
     public void FlagTemplate_Init() {
 
-        FlagTemplate f1 = new FlagTemplate(1, Color.blue);
-        FlagTemplate f2 = new FlagTemplate(2, Color.red);
+        FlagTemplate f1 = new FlagTemplate(1, Color.red);
+        FlagTemplate f2 = new FlagTemplate(2, Color.yellow);
 
         flagDict = new Dictionary<int, FlagTemplate>();
         flagDict.Add(1, f1);
         flagDict.Add(2, f2);
     }
 
+    public void TowerTemplate_Init() {
+        TowerTemplate t1 = new TowerTemplate(1, Color.red);
+        TowerTemplate t2 = new TowerTemplate(2, Color.yellow);
+
+        towerDict = new Dictionary<int, TowerTemplate>();
+        towerDict.Add(1, t1);
+        towerDict.Add(2, t2);
+    }
     public FlagTemplate GetFlag(int typeID) {
         FlagTemplate value; // * ref out
         bool exist = flagDict.TryGetValue(typeID, out value);
         if (!exist) {
             Debug.LogError("Not Exist " + typeID.ToString());
+            return null;
+        }
+        return value;
+    }
+
+    public TowerTemplate GetTower(int typeID) {
+        TowerTemplate value;
+        bool exist = towerDict.TryGetValue(typeID, out value);
+        if (!exist) {
+            Debug.LogError("not exist " + typeID.ToString());
             return null;
         }
         return value;

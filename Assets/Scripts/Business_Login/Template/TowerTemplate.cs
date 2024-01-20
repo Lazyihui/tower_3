@@ -9,13 +9,14 @@ public class TowerTemplate {
 
     public TowerTemplate(int typeID, Color color) {
         this.typeID = typeID;
-    }
-
-    public void Create(Color color, int typeID) {
-
         this.color = color;
-        this.typeID = typeID;
-
     }
+
+    // public void Create(Color color, int typeID) {
+
+    //     this.color = color;
+    //     this.typeID = typeID;
+
+    // }
 
 }

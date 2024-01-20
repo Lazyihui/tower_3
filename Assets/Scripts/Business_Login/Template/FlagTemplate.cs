@@ -12,12 +12,10 @@ public class FlagTemplate {
         this.color=color;
     }
 
-    public void  Create(Color color, int typeID) {
+    // public void  Create(Color color, int typeID) {
+    //     this.color = color;
+    //     this.typeID = typeID;
 
-        
-        this.color = color;
-        this.typeID = typeID;
-
-    }
+    // }
 
 }

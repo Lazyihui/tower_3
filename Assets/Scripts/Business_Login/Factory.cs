@@ -9,7 +9,7 @@ public static class Factory {
         FlagEntity prefab = gameCtx.assetsCtx.flagEntity;
 
         FlagTemplate tm = gameCtx.tpl.GetFlag(typeID);
-        
+
         // instance: 实例(蛋糕)
         FlagEntity entity = GameObject.Instantiate(prefab);
         //monobehaviour -ctor ==init
@@ -21,4 +21,20 @@ public static class Factory {
 
         return entity;
     }
+
+    public static TowerEntity Factory_Create_Tower(GameCtx gameCtx, int typeID, Vector2 pos) {
+        TowerEntity prefab = gameCtx.assetsCtx.towerEntity;
+
+        TowerTemplate tm = gameCtx.tpl.GetTower(typeID);
+
+        TowerEntity entity = GameObject.Instantiate(prefab);
+
+        entity.Ctor();
+        entity.SetColor(tm.color);
+        entity.typeID = typeID;
+        entity.SetPos(pos);
+        entity.id = gameCtx.TowerID++;
+        return entity;
+    }
+
 }

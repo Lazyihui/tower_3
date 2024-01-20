@@ -1,5 +1,9 @@
 public class GameCtx {
     public FlagRepository flagRepository;
+    public int flagID;
+
+    public TowerRepository towerRepository;
+    public int TowerID;
 
     public UICtx uictx;
 
@@ -7,7 +11,8 @@ public class GameCtx {
 
     public Template tpl;
 
-    public int flagID;
+
+
 
     //==GameCtxInit
     public GameCtx() {
