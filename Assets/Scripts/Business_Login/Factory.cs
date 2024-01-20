@@ -33,7 +33,7 @@ public static class Factory {
         entity.SetColor(tm.color);
         entity.typeID = typeID;
         entity.SetPos(pos);
-        entity.id = gameCtx.TowerID++;
+        entity.id = gameCtx.towerID++;
         return entity;
     }
 

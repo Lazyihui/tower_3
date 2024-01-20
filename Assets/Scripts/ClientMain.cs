@@ -17,6 +17,7 @@ public class ClientMain : MonoBehaviour {
         ctx.Inject(canvas, assetsCtx);
 
         Debug.Log("hello world");
+
         UIApp.PN_Login_Open(ctx.uictx, () => {
             UIApp.PN_Login_Close(ctx.uictx);
             GamesBusiness.Enter(ctx.gameCtx);

@@ -7,6 +7,7 @@ public static class GamesBusiness {
 
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4));
 
+        TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4));
     }
     // 每帧一次
     public static void PreTick(GameCtx gameCtx, float dt) {
@@ -17,7 +18,7 @@ public static class GamesBusiness {
 
     }
 
-    
+
 }
 
 

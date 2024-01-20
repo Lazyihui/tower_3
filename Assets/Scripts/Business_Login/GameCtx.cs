@@ -3,7 +3,7 @@ public class GameCtx {
     public int flagID;
 
     public TowerRepository towerRepository;
-    public int TowerID;
+    public int towerID;
 
     public UICtx uictx;
 
@@ -20,8 +20,14 @@ public class GameCtx {
         tpl = new Template();
 
         flagRepository = new FlagRepository();
+
+        towerRepository = new TowerRepository();
+
         tpl.FlagTemplate_Init();
+        tpl.TowerTemplate_Init();
+
         flagID = 0;
+        towerID=0;
     }
 
     public void Inject(UICtx uictx, AssetsCtx assetsCtx) {
