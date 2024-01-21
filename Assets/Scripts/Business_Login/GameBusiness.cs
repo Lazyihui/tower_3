@@ -9,6 +9,26 @@ public static class GamesBusiness {
 
         TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4));
     }
+
+    // 可能一帧有多次
+    public static void FixedTick(GameCtx ctx, float fixdt) {
+
+        // for Tower
+        int towerLen = ctx.towerRepository.TakeAll(out TowerEntity[] towers);
+        for (int i = 0; i < towerLen; i += 1) {
+            TowerEntity tower = towers[i];
+            TowerDomain.TrySpawnRoles(ctx, tower, fixdt);
+        }
+        // for mst
+        int mstLen = ctx.mstRepository.TakeAll(out MstEntity[] msts);
+        for (int i = 0; i < mstLen; i++) {
+            MstEntity mst = msts[i];
+            MstDomain.MoveByPath(ctx, mst, fixdt);
+            MstDomain.OverlapFlag(ctx, mst);
+        }
+
+    }
+
     // 每帧一次
     public static void PreTick(GameCtx gameCtx, float dt) {
 
