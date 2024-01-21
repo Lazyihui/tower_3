@@ -5,6 +5,9 @@ public class GameCtx {
     public TowerRepository towerRepository;
     public int towerID;
 
+    public MstRepository mstRepository;
+    public int mstID;
+
     public UICtx uictx;
 
     public AssetsCtx assetsCtx;
