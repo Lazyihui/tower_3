@@ -14,7 +14,6 @@ public static class GamesBusiness {
         // for Tower
         int towerLen = ctx.towerRepository.TakeAll(out TowerEntity[] towers);
         for (int i = 0; i < towerLen; i += 1) {
-            Debug.Log("hhh");
 
             TowerEntity tower = towers[i];
             TowerDomain.TrySpawnMsts(ctx, tower, fixdt);

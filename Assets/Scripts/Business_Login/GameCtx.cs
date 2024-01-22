@@ -12,7 +12,7 @@ public class GameCtx {
 
     public AssetsCtx assetsCtx;
 
-
+    public TemplateCtx tplCtx;
 
 
 
@@ -28,14 +28,16 @@ public class GameCtx {
 
 
 
+
         flagID = 0;
         towerID = 0;
         mstID = 0;
     }
 
-    public void Inject(UICtx uictx, AssetsCtx assetsCtx) {
+    public void Inject(UICtx uictx, AssetsCtx assetsCtx, TemplateCtx tplCtx) {
         this.assetsCtx = assetsCtx;
         this.uictx = uictx;
+        this.tplCtx = tplCtx;
     }
 
 }

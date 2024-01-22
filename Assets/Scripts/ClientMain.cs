@@ -19,6 +19,7 @@ public class ClientMain : MonoBehaviour {
         ctx = new ClientCtx();
         ctx.Inject(canvas, assetsCtx);
 
+        TemplateInfra.Load(ctx.tplCtx);
 
         UIApp.PN_Login_Open(ctx.uictx, () => {
             UIApp.PN_Login_Close(ctx.uictx);
@@ -37,7 +38,6 @@ public class ClientMain : MonoBehaviour {
         restDT += dt;
 
         if (restDT <= FIXED_INTERVAL) {
-            Debug.Log("111");
             GamesBusiness.FixedTick(ctx.gameCtx, restDT);
             restDT = 0;
         } else {
