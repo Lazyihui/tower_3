@@ -19,7 +19,6 @@ public class ClientMain : MonoBehaviour {
         ctx = new ClientCtx();
         ctx.Inject(canvas, assetsCtx);
 
-        Debug.Log("hello world");
 
         UIApp.PN_Login_Open(ctx.uictx, () => {
             UIApp.PN_Login_Close(ctx.uictx);
@@ -28,7 +27,7 @@ public class ClientMain : MonoBehaviour {
     }
 
     float restDT;
-    const float FIXED_INTERVAL = 0.01f;
+    const float FIXED_INTERVAL = 0.1f;
     // Update is called once per frame
     void Update() {
         float dt = Time.deltaTime;
@@ -36,7 +35,9 @@ public class ClientMain : MonoBehaviour {
         GamesBusiness.PreTick(ctx.gameCtx, dt);
 
         restDT += dt;
+
         if (restDT <= FIXED_INTERVAL) {
+            Debug.Log("111");
             GamesBusiness.FixedTick(ctx.gameCtx, restDT);
             restDT = 0;
         } else {

@@ -7,7 +7,6 @@ public class TowerEntity : MonoBehaviour {
     public int typeID;
 
     public bool isSpawner; // 是否生成器
-    // 每次CD结束, 生成怪物总量: maintain / interval
     public float cd; // cooldown 冷却时间
     public float cdMax;
     public float maintain; // 维持时间
@@ -19,6 +18,23 @@ public class TowerEntity : MonoBehaviour {
 
     public SpriteRenderer sr;
 
+    public void InitFakeData() {
+        isSpawner = true;
+        cd = 1;
+        cdMax = 1;
+        maintain = 3;
+        maintainTimer = 3.01f;
+        interval = 1;
+        intervalTimer = 1;
+
+        // 0, 5
+        path = new Vector2[] {
+            new Vector2(2, 5),
+            new Vector2(2, 3),
+            new Vector2(0, 3),
+            new Vector2(0, -5),
+        };
+    }
     public void Ctor() {
         sr = GetComponent<SpriteRenderer>();
     }

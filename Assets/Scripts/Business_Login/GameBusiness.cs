@@ -3,21 +3,21 @@ using UnityEngine;
 
 public static class GamesBusiness {
     public static void Enter(GameCtx gameCtx) {
-        Debug.Log("EnterGame");
 
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4));
 
-        TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4));
+        TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4), Color.blue);
     }
 
     // 可能一帧有多次
     public static void FixedTick(GameCtx ctx, float fixdt) {
-
         // for Tower
         int towerLen = ctx.towerRepository.TakeAll(out TowerEntity[] towers);
         for (int i = 0; i < towerLen; i += 1) {
+            Debug.Log("hhh");
+
             TowerEntity tower = towers[i];
-            TowerDomain.TrySpawnRoles(ctx, tower, fixdt);
+            TowerDomain.TrySpawnMsts(ctx, tower, fixdt);
         }
         // for mst
         int mstLen = ctx.mstRepository.TakeAll(out MstEntity[] msts);

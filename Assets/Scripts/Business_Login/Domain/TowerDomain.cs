@@ -2,13 +2,22 @@ using System;
 using UnityEngine;
 
 public static class TowerDomain {
-    public static TowerEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos) {
-        TowerEntity entity = Factory.Factory_Create_Tower(gameCtx, typeID, pos);
+    public static TowerEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos, Color color) {
+        TowerEntity prefab = gameCtx.assetsCtx.towerEntity;
+
+        TowerEntity entity = GameObject.Instantiate(prefab);
+
+        entity.Ctor();
+        entity.SetPos(pos);
+        entity.SetColor(color);
+        entity.id = gameCtx.towerID++;
+        entity.InitFakeData();
+
 
         gameCtx.towerRepository.Add(entity);
         return entity;
     }
-    public static void TrySpawnRoles(GameCtx ctx, TowerEntity tower, float fixdt) {
+    public static void TrySpawnMsts(GameCtx ctx, TowerEntity tower, float fixdt) {
         // 单个塔生成怪物
         if (!tower.isSpawner) {
             return;
@@ -18,9 +27,12 @@ public static class TowerDomain {
         if (tower.cd > 0) {
             return;
         }
-
+        //生成时间
         tower.intervalTimer -= fixdt;
+
         if (tower.intervalTimer <= 0) {
+            Debug.Log("Spawn");
+
             tower.intervalTimer = tower.interval;
             MstEntity mst = MstDomain.Spawn(ctx, 0, tower.transform.position);
             mst.path = tower.path;
