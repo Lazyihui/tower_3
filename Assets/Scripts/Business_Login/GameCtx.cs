@@ -12,7 +12,6 @@ public class GameCtx {
 
     public AssetsCtx assetsCtx;
 
-    public Template tpl;
 
 
 
@@ -20,7 +19,6 @@ public class GameCtx {
     //==GameCtxInit
     public GameCtx() {
 
-        tpl = new Template();
 
         flagRepository = new FlagRepository();
 
@@ -28,8 +26,6 @@ public class GameCtx {
 
         mstRepository = new MstRepository();
 
-        tpl.FlagTemplate_Init();
-        tpl.TowerTemplate_Init();
 
 
         flagID = 0;

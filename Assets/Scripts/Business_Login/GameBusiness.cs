@@ -4,7 +4,7 @@ using UnityEngine;
 public static class GamesBusiness {
     public static void Enter(GameCtx gameCtx) {
 
-        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4));
+        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
 
         TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4), Color.blue);
     }
