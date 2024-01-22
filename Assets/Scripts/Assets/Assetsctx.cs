@@ -9,4 +9,6 @@ public class AssetsCtx : MonoBehaviour {
     public TowerEntity towerEntity;
 
     public MstEntity mstEntity;
+
+    public MstTM mstTM;
 }

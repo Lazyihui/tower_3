@@ -34,7 +34,7 @@ public static class TowerDomain {
             Debug.Log("Spawn");
 
             tower.intervalTimer = tower.interval;
-            MstEntity mst = MstDomain.Spawn(ctx, 0, tower.transform.position);
+            MstEntity mst = MstDomain.Spawn(ctx, tower.MstTypeID, tower.transform.position);
             mst.path = tower.path;
         }
 

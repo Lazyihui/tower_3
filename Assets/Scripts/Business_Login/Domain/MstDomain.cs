@@ -3,13 +3,16 @@ using UnityEngine;
 public static class MstDomain {
     public static MstEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos) {
 
+        MstTM mstTM = gameCtx.assetsCtx.mstTM;
+
         MstEntity prefab = gameCtx.assetsCtx.mstEntity;
         MstEntity entity = GameObject.Instantiate(prefab);
         entity.Ctor();
         entity.SetPos(pos);
         entity.id = gameCtx.mstID++;
-        entity.moveSpeed = 4.4f;
+        entity.moveSpeed = mstTM.moveSpeed;
         gameCtx.mstRepository.Add(entity);
+        Debug.Log("生成的mst" + typeID);
         return entity;
     }
 
