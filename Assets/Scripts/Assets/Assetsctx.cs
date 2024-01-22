@@ -10,5 +10,4 @@ public class AssetsCtx : MonoBehaviour {
 
     public MstEntity mstEntity;
 
-    public MstTM mstTM;
 }
