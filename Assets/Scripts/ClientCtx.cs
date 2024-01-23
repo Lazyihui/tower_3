@@ -16,12 +16,12 @@ public class ClientCtx {
         this.uictx = new UICtx();
         this.gameCtx = new GameCtx();
         this.tplCtx = new TemplateCtx();
+        this.assetsCtx = new AssetsCtx();
     }
 
-    public void Inject(Canvas canvas, AssetsCtx assetsCtx) {
-        this.assetsCtx = assetsCtx;
+    public void Inject(Canvas canvas) {
 
         uictx.Inject(canvas, assetsCtx);
-        gameCtx.Inject(uictx, assetsCtx,tplCtx);
+        gameCtx.Inject(uictx, assetsCtx, tplCtx);
     }
 }

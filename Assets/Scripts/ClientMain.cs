@@ -13,7 +13,6 @@ public class ClientMain : MonoBehaviour {
         Application.targetFrameRate = 120;
 
 
-        AssetsCtx assetsCtx = gameObject.GetComponentInChildren<AssetsCtx>();
         Canvas canvas = gameObject.GetComponentInChildren<Canvas>();
 
         ctx = new ClientCtx();

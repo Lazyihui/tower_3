@@ -10,6 +10,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class TemplateInfra {
 
     public static void Load(TemplateCtx ctx) {
+        
         AssetLabelReference labelReference = new AssetLabelReference();
         labelReference.labelString = "TM_Mst"; // label
         IList<MstTM> all = Addressables.LoadAssetsAsync<MstTM>(labelReference, null).WaitForCompletion();
