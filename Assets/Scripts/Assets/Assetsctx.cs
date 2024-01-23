@@ -3,11 +3,6 @@ using UnityEngine;
 
 public class AssetsCtx {
 
-    public FlagEntity flagEntity;
-
-    public TowerEntity towerEntity;
-
-    public MstEntity mstEntity;
 
     public Dictionary<string, GameObject> entities;
 
@@ -21,6 +16,11 @@ public class AssetsCtx {
     public bool Panel_TryGetPrefab(string name, out GameObject prefab) {
         Debug.Log("Get" + name);
         return panels.TryGetValue(name, out prefab);
+
+    }
+    public bool Entity_TryGetPrefab(string name, out GameObject prefab) {
+        Debug.Log("Get" + name);
+        return entities.TryGetValue(name, out prefab);
 
     }
 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Entity
+  m_Name: Entites
   m_EditorClassIdentifier: 
-  m_GroupName: Entity
+  m_GroupName: Entites
   m_Data:
     m_SerializedData: []
   m_GUID: 3c8df6930ed57774482748d218500b7d
@@ -25,6 +25,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fca33a95bd260574e9360b164cd3fd09
     m_Address: TowerEntity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6c78b6cf996d6a4886c87fd4c568715
+    m_Address: MstEntity
     m_ReadOnly: 0
     m_SerializedLabels:
     - Entities

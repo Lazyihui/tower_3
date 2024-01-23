@@ -2,13 +2,13 @@ using UnityEngine;
 
 public static class MstDomain {
     public static MstEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos) {
-        
+
         bool has = gameCtx.tplCtx.msts.TryGetValue(typeID, out MstTM mstTM);
-        if(!has){
-            Debug.LogError("on find"+typeID);
+        if (!has) {
+            Debug.LogError("on find" + typeID);
         }
-        MstEntity prefab = gameCtx.assetsCtx.mstEntity;
-        MstEntity entity = GameObject.Instantiate(prefab);
+        gameCtx.assetsCtx.Entity_TryGetPrefab("MstEntity", out GameObject prefab);
+        MstEntity entity = GameObject.Instantiate(prefab).GetComponent<MstEntity>();
         entity.Ctor();
         entity.SetPos(pos);
         entity.id = gameCtx.mstID++;

@@ -3,9 +3,10 @@ using UnityEngine;
 
 public static class TowerDomain {
     public static TowerEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos, Color color) {
-        TowerEntity prefab = gameCtx.assetsCtx.towerEntity;
 
-        TowerEntity entity = GameObject.Instantiate(prefab);
+        gameCtx.assetsCtx.Entity_TryGetPrefab("TowerEntity", out GameObject prefab);
+
+        TowerEntity entity = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
 
         entity.Ctor();
         entity.SetPos(pos);

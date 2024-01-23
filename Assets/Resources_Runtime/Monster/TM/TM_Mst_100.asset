@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TM_Mst_100
   m_EditorClassIdentifier: 
   typeID: 100
-  moveSpeed: 20
+  moveSpeed: 5

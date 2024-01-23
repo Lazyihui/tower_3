@@ -16,8 +16,9 @@ public class ClientMain : MonoBehaviour {
         Canvas canvas = gameObject.GetComponentInChildren<Canvas>();
 
         ctx = new ClientCtx();
-        ctx.Inject(canvas, assetsCtx);
+        ctx.Inject(canvas);
 
+        AssetsInfra.Load(ctx.assetsCtx);
         TemplateInfra.Load(ctx.tplCtx);
 
         UIApp.PN_Login_Open(ctx.uictx, () => {
