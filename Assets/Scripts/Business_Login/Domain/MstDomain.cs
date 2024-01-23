@@ -13,6 +13,7 @@ public static class MstDomain {
         entity.SetPos(pos);
         entity.id = gameCtx.mstID++;
         entity.moveSpeed = mstTM.moveSpeed;
+        entity.Init(mstTM.spr);
         gameCtx.mstRepository.Add(entity);
         Debug.Log("生成的mst" + typeID);
         return entity;

@@ -7,6 +7,12 @@ public class MstEntity : MonoBehaviour {
     public Vector2[] path;
     public int pathIndex;
 
+    public SpriteRenderer sr; // 把图片渲染出来用的渲染器
+
+    public void Init(Sprite spr) {
+        sr.sprite = spr;
+    }
+
     public void Ctor() {
 
     }

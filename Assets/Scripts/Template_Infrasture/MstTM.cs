@@ -6,6 +6,9 @@ public class MstTM : ScriptableObject {
     public int typeID;
 
     public float moveSpeed;
+
+    public Sprite spr; // 图片
+
 }
 
 
