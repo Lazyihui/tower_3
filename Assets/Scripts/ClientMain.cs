@@ -48,6 +48,7 @@ public class ClientMain : MonoBehaviour {
         }
 
         // LateTick
+        GamesBusiness.LateTick(ctx.gameCtx, dt);
 
     }
 }

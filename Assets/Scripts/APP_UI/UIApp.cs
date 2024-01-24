@@ -35,5 +35,17 @@ public static class UIApp {
         heart.Init(hp);
         heart.Show();
     }
+    public static void PN_HearInfo_Update(UICtx ctx, int hp) {
+        PN_HeartInfo heart = ctx.pn_Heart;
+        if (heart != null) {
+            heart.Init(hp);
+        }
+    }
+    public static void PN_HearInfo_Close(UICtx ctx) {
+        PN_HeartInfo heart = ctx.pn_Heart;
+        if (heart != null) {
+            heart.Close();
+        }
+    }
 
 }
