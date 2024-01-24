@@ -23,5 +23,6 @@ public static class UIApp {
             panel.Close();
         }
     }
+    public static void PN_HeartInfo_Open(){}
 
 }
