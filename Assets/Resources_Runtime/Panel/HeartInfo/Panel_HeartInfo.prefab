@@ -130,3 +130,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elePrefab: {fileID: 7651987014184416963, guid: af75d8f0c0dc8e741becfe5995d5c8e4, type: 3}
+  heartGroup: {fileID: 4129627126423576126}

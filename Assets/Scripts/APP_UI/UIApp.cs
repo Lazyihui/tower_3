@@ -23,6 +23,17 @@ public static class UIApp {
             panel.Close();
         }
     }
-    public static void PN_HeartInfo_Open(){}
+    public static void PN_HeartInfo_Open(UICtx uiCtx, int hp) {
+        PN_HeartInfo heart = uiCtx.pn_Heart;
+        if (heart == null) {
+            uiCtx.assetsCtx.Panel_TryGetPrefab("Panel_HeartInfo", out GameObject prefab);
+            heart = GameObject.Instantiate(prefab, uiCtx.canvas.transform).GetComponent<PN_HeartInfo>();
+            heart.Ctor();
+            uiCtx.pn_Heart = heart;
+
+        }
+        heart.Init(hp);
+        heart.Show();
+    }
 
 }

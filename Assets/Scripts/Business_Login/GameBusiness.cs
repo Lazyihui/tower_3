@@ -7,6 +7,9 @@ public static class GamesBusiness {
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
 
         TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4), Color.blue);
+    
+        //打开UI
+        UIApp.PN_HeartInfo_Open(gameCtx.uictx ,5);
     }
 
     // 可能一帧有多次
