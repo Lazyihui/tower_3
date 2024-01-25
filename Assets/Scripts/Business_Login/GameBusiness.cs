@@ -4,6 +4,9 @@ using UnityEngine;
 public static class GamesBusiness {
     public static void Enter(GameCtx gameCtx) {
 
+        gameCtx.playerEntity.hp = 5;
+        gameCtx.playerEntity.hpMax = 5;
+
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
 
         TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4), Color.blue);
@@ -41,7 +44,7 @@ public static class GamesBusiness {
 
     }
     public static void LateTick(GameCtx ctx, float dt) {
-        UIApp.PN_HearInfo_Update(ctx.uictx, 5);
+        UIApp.PN_HearInfo_Update(ctx.uictx, ctx.playerEntity.hp);
     }
 }
 

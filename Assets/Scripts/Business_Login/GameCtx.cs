@@ -8,6 +8,8 @@ public class GameCtx {
     public MstRepository mstRepository;
     public int mstID;
 
+    public PlayerEntity playerEntity;
+
     public UICtx uictx;
 
     public AssetsCtx assetsCtx;
@@ -25,6 +27,8 @@ public class GameCtx {
         towerRepository = new TowerRepository();
 
         mstRepository = new MstRepository();
+
+        playerEntity = new PlayerEntity();
 
 
 

@@ -59,7 +59,7 @@ public static class MstDomain {
 
         if (target != null) {
             UnSpawn(ctx, mst);
-            // PlayerDomain.Hurt(ctx, ctx.playerEntity, 1);
+            PlayerDomain.Hurt(ctx, ctx.playerEntity, 1);
         }
     }
 
