@@ -10,6 +10,8 @@ public class GameCtx {
 
     public PlayerEntity playerEntity;
 
+    public InputEntity inputEntity;
+
     public UICtx uictx;
 
     public AssetsCtx assetsCtx;
@@ -29,6 +31,8 @@ public class GameCtx {
         mstRepository = new MstRepository();
 
         playerEntity = new PlayerEntity();
+
+        inputEntity = new InputEntity();
 
 
 
