@@ -4,6 +4,9 @@ public class TowerEntity : MonoBehaviour {
 
     public int id;
 
+    //形状
+    public Vector2 shapeSize;
+
     public int typeID;
 
     public bool isSpawner; // 是否生成器
@@ -21,6 +24,8 @@ public class TowerEntity : MonoBehaviour {
     public SpriteRenderer sr;
 
     public void InitFakeData() {
+
+        shapeSize = -new Vector2(1, 1);
         isSpawner = true;
         cd = 1;
         cdMax = 1;
@@ -28,7 +33,7 @@ public class TowerEntity : MonoBehaviour {
         maintainTimer = 3.01f;
         interval = 1;
         intervalTimer = 1;
-        MstTypeID =100;
+        MstTypeID = 100;
         // 0, 5
         path = new Vector2[] {
             new Vector2(2, 5),
@@ -49,4 +54,8 @@ public class TowerEntity : MonoBehaviour {
         transform.position = pos;
     }
 
+    void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, shapeSize);
+    }
 }

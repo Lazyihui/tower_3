@@ -4,9 +4,12 @@ public class FlagEntity : MonoBehaviour {
 
     public int id;
 
+    //形状
+
     public int typeID;
     public SpriteRenderer sr;
 
+    
     //构造在创建的时候
     public void Ctor() {
         sr = GetComponent<SpriteRenderer>();
