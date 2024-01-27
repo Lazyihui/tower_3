@@ -15,6 +15,7 @@ public static class UserInterfaceDomain {
 
                     input.isMouseLeftDown = false;
                     Debug.Log("Tower isclick" + tower.name);
+                    break;
                 }
             }
         }
