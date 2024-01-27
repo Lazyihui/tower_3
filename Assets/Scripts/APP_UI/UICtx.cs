@@ -5,17 +5,24 @@ public class UICtx {
 
     public PN_HeartInfo pn_Heart;
 
-    public Canvas canvas;
+    public Canvas screenCanvas;
+
+    public Canvas worldCanvas;
 
     public AssetsCtx assetsCtx;
+
+
+    public PN_BuildManifest pn_BuildManifest;
 
     public UICtx() {
 
     }
 
-    public void Inject(Canvas canvas, AssetsCtx assetsCtx) {
-        this.canvas = canvas;
+    public void Inject(Canvas screenCanvas, AssetsCtx assetsCtx, Canvas worldCanvas) {
+        this.screenCanvas = screenCanvas;
+        this.worldCanvas = worldCanvas;
         this.assetsCtx = assetsCtx;
+
     }
 
 

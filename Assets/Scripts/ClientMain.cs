@@ -13,12 +13,14 @@ public class ClientMain : MonoBehaviour {
         Application.targetFrameRate = 120;
 
 
-        Canvas canvas = gameObject.GetComponentInChildren<Canvas>();
+        Canvas screenCanvas = gameObject.transform.Find("ScreenCanvas").GetComponentInChildren<Canvas>();
+        Canvas worldCanvas = gameObject.transform.Find("WorldCanvas").GetComponentInChildren<Canvas>();
         Camera mainCamera = gameObject.GetComponentInChildren<Camera>();
-
+        Debug.Assert(screenCanvas != null);
+        Debug.Assert(worldCanvas != null);
 
         ctx = new ClientCtx();
-        ctx.Inject(mainCamera, canvas);
+        ctx.Inject(mainCamera, screenCanvas, worldCanvas);
 
         AssetsInfra.Load(ctx.assetsCtx);
         TemplateInfra.Load(ctx.tplCtx);

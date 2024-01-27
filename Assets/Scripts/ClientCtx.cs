@@ -19,9 +19,9 @@ public class ClientCtx {
         this.assetsCtx = new AssetsCtx();
     }
 
-    public void Inject(Camera maincamera,Canvas canvas) {
+    public void Inject(Camera maincamera,Canvas canvas,Canvas worldCanvans) {
 
-        uictx.Inject(canvas, assetsCtx);
+        uictx.Inject(canvas, assetsCtx,worldCanvans);
         gameCtx.Inject(maincamera,uictx, assetsCtx, tplCtx);
     }
 }

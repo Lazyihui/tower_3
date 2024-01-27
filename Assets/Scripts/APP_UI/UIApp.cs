@@ -8,7 +8,7 @@ public static class UIApp {
         PN_Login panel = uiCtx.pn_Login;
         if (panel == null) {
             uiCtx.assetsCtx.Panel_TryGetPrefab("Login_Panel", out GameObject prefab);
-            panel = GameObject.Instantiate(prefab, uiCtx.canvas.transform).GetComponent<PN_Login>();
+            panel = GameObject.Instantiate(prefab, uiCtx.screenCanvas.transform).GetComponent<PN_Login>();
             panel.Ctor();
             uiCtx.pn_Login = panel;
             panel.OnstartClickHandle = OnstartClickHandle;
@@ -27,7 +27,7 @@ public static class UIApp {
         PN_HeartInfo heart = uiCtx.pn_Heart;
         if (heart == null) {
             uiCtx.assetsCtx.Panel_TryGetPrefab("Panel_HeartInfo", out GameObject prefab);
-            heart = GameObject.Instantiate(prefab, uiCtx.canvas.transform).GetComponent<PN_HeartInfo>();
+            heart = GameObject.Instantiate(prefab, uiCtx.screenCanvas.transform).GetComponent<PN_HeartInfo>();
             heart.Ctor();
             uiCtx.pn_Heart = heart;
 
@@ -46,6 +46,20 @@ public static class UIApp {
         if (heart != null) {
             heart.Close();
         }
+    }
+
+    //PN_BuildManifest
+    //面板打开（基本上都是这么写）
+    public static void PN_BuildManifest_Open(UICtx uiCtx, Vector3 worldPos) {
+        PN_BuildManifest panel = uiCtx.pn_BuildManifest;
+        if (panel == null) {
+            uiCtx.assetsCtx.Panel_TryGetPrefab("Panel_BulidManifast", out GameObject prefab);
+            panel = GameObject.Instantiate(prefab, uiCtx.worldCanvas.transform).GetComponent<PN_BuildManifest>();
+            panel.Ctor();
+            uiCtx.pn_BuildManifest = panel;
+
+        }
+        panel.Init(worldPos);
     }
 
 }

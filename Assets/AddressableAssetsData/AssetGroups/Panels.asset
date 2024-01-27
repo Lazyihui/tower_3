@@ -35,6 +35,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Panels
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c109245cbe056642a18e49a49fa8d3e
+    m_Address: Panel_BulidManifast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panels
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4b0f3a700350f584886b5eb2bc68cb30, type: 2}
   m_SchemaSet:

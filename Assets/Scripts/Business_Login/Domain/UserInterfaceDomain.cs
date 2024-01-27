@@ -11,10 +11,9 @@ public static class UserInterfaceDomain {
             for (int i = 0; i < towerLen; i++) {
                 TowerEntity tower = towers[i];
                 if (PFPhysics.IsPointInsideRectangle(input.mouseWorldPos, tower.transform.position, tower.shapeSize)) {
-                    Debug.Log("click");
-
-                    input.isMouseLeftDown = false;
                     Debug.Log("Tower isclick" + tower.name);
+                    UIApp.PN_BuildManifest_Open(gameCtx.uictx, input.mouseWorldPos);
+                    input.isMouseLeftDown = false;
                     break;
                 }
             }
