@@ -25,7 +25,7 @@ public class TowerEntity : MonoBehaviour {
 
     public void InitFakeData() {
 
-        shapeSize = -new Vector2(1, 1);
+        shapeSize = new Vector2(1, 1);
         isSpawner = true;
         cd = 1;
         cdMax = 1;

@@ -100,5 +100,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  shapeSize: {x: 0, y: 0}
   typeID: 0
+  isSpawner: 0
+  cd: 0
+  cdMax: 0
+  maintain: 0
+  maintainTimer: 0
+  interval: 0
+  intervalTimer: 0
+  MstTypeID: 0
+  path: []
   sr: {fileID: 0}

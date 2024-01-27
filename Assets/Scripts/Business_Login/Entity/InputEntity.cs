@@ -7,4 +7,6 @@ public class InputEntity {
     public Vector2 mouseWorldPos;
 
     public bool isMouseLeftDown;
+
+    public  InputEntity(){}
 }

@@ -14,9 +14,11 @@ public class ClientMain : MonoBehaviour {
 
 
         Canvas canvas = gameObject.GetComponentInChildren<Canvas>();
+        Camera mainCamera = gameObject.GetComponentInChildren<Camera>();
+
 
         ctx = new ClientCtx();
-        ctx.Inject(canvas);
+        ctx.Inject(mainCamera, canvas);
 
         AssetsInfra.Load(ctx.assetsCtx);
         TemplateInfra.Load(ctx.tplCtx);

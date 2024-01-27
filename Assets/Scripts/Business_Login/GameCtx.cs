@@ -1,4 +1,6 @@
+using UnityEngine;
 public class GameCtx {
+
     public FlagRepository flagRepository;
     public int flagID;
 
@@ -19,7 +21,7 @@ public class GameCtx {
     public TemplateCtx tplCtx;
 
 
-
+    public Camera mainCamera;
     //==GameCtxInit
     public GameCtx() {
 
@@ -42,7 +44,8 @@ public class GameCtx {
         mstID = 0;
     }
 
-    public void Inject(UICtx uictx, AssetsCtx assetsCtx, TemplateCtx tplCtx) {
+    public void Inject(Camera camera, UICtx uictx, AssetsCtx assetsCtx, TemplateCtx tplCtx) {
+        this.mainCamera = camera;
         this.assetsCtx = assetsCtx;
         this.uictx = uictx;
         this.tplCtx = tplCtx;

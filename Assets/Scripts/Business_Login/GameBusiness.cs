@@ -17,20 +17,20 @@ public static class GamesBusiness {
     }
 
     // 可能一帧有多次
-    public static void FixedTick(GameCtx ctx, float fixdt) {
+    public static void FixedTick(GameCtx gameCtx, float fixdt) {
         // for Tower
-        int towerLen = ctx.towerRepository.TakeAll(out TowerEntity[] towers);
+        int towerLen = gameCtx.towerRepository.TakeAll(out TowerEntity[] towers);
         for (int i = 0; i < towerLen; i += 1) {
 
             TowerEntity tower = towers[i];
-            TowerDomain.TrySpawnMsts(ctx, tower, fixdt);
+            TowerDomain.TrySpawnMsts(gameCtx, tower, fixdt);
         }
         // for mst
-        int mstLen = ctx.mstRepository.TakeAll(out MstEntity[] msts);
+        int mstLen = gameCtx.mstRepository.TakeAll(out MstEntity[] msts);
         for (int i = 0; i < mstLen; i++) {
             MstEntity mst = msts[i];
-            MstDomain.MoveByPath(ctx, mst, fixdt);
-            MstDomain.OverlapFlag(ctx, mst);
+            MstDomain.MoveByPath(gameCtx, mst, fixdt);
+            MstDomain.OverlapFlag(gameCtx, mst);
         }
 
     }
@@ -38,11 +38,26 @@ public static class GamesBusiness {
     // 每帧一次
     public static void PreTick(GameCtx gameCtx, float dt) {
 
+        InputEntity input = gameCtx.inputEntity;
+        //屏幕空间
+        input.mouseScreenPos = Input.mousePosition;
+        //世界
+        Camera camera = gameCtx.mainCamera;
+        //ScreenToViewportPoint 屏幕转世界
+        input.mouseWorldPos = camera.ScreenToWorldPoint(input.mouseScreenPos);
+        if (Input.GetMouseButtonDown(0)) {
+            input.isMouseLeftDown = true;
+            //tower
+
+        }
+        UserInterfaceDomain.PreTick(gameCtx, dt);
         // for Flag
 
         // for Role
 
     }
+
+
     public static void LateTick(GameCtx ctx, float dt) {
         UIApp.PN_HearInfo_Update(ctx.uictx, ctx.playerEntity.hp);
     }

@@ -14,7 +14,6 @@ public class PN_HeartInfo : MonoBehaviour {
     }
 
     public void Init(int hp) {
-        Debug.Log(hp);
         int lastHp = elements.Count;
         int diff = hp - lastHp;
 
