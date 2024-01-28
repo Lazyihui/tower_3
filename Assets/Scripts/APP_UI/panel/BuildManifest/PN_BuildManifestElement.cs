@@ -1,4 +1,5 @@
 //按钮
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class PN_BuildManifestElement : MonoBehaviour {
     [SerializeField] Text priceTxt;
     [SerializeField] Image icon;
 
-
+    public Action<int, int> OnBuildHandle;
     public void Ctor(int clickedTowerEntityID, int clickedTowerTypeID, int price, Sprite icon) {
         this.clickedTowerEntityID = clickedTowerEntityID;
         this.clickedTowerTypeID = clickedTowerTypeID;
@@ -21,7 +22,7 @@ public class PN_BuildManifestElement : MonoBehaviour {
         this.icon.sprite = icon;
 
         button.onClick.AddListener(() => {
-            Debug.Log("click " + clickedTowerEntityID);
+            OnBuildHandle.Invoke(clickedTowerEntityID, clickedTowerTypeID);
         });
     }
 }

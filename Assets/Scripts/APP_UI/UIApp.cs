@@ -60,6 +60,10 @@ public static class UIApp {
             panel.Ctor();
             uiCtx.pn_BuildManifest = panel;
 
+            panel.OnBuildHandle = (int clickedTowerEntityID, int clickedTowerTypeID) => {
+                uiCtx.events.BuildManifest_OnBuild(clickedTowerEntityID, clickedTowerTypeID);
+            };
+
         }
         panel.Init(worldPos);
     }

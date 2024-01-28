@@ -12,6 +12,8 @@ public class PN_BuildManifest : MonoBehaviour {
 
     List<PN_BuildManifestElement> elements;
 
+    public Action<int, int> OnBuildHandle;
+
 
     public void Ctor() {
         elements = new List<PN_BuildManifestElement>();
@@ -31,10 +33,14 @@ public class PN_BuildManifest : MonoBehaviour {
     public void AddOption(int clickedTowerEntityID, int clickedTowerTypeID, int price, Sprite icon) {
         PN_BuildManifestElement ele = GameObject.Instantiate(elePrefab, btnGroup);
         ele.Ctor(clickedTowerEntityID, clickedTowerTypeID, price, icon);
-
+        //绑定
+        ele.OnBuildHandle = ElementClick;
         elements.Add(ele);
     }
 
+    void ElementClick(int clickedTowerEntityID, int clickedTowerTypeID) {
+        OnBuildHandle.Invoke(clickedTowerEntityID, clickedTowerTypeID);
+    }
     void show() {
         gameObject.SetActive(true);
     }

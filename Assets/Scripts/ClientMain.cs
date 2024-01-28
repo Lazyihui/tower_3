@@ -36,12 +36,17 @@ public class ClientMain : MonoBehaviour {
 
     void BindingEvents(ClientCtx ctc) {
 
-        UIEvents uIEvents = ctx.uictx.events;
+        UIEvents uiEvents = ctx.uictx.events;
 
-        uIEvents.Login_OnStartClickHandle = () => {
+        uiEvents.Login_OnStartClickHandle = () => {
             UIApp.PN_Login_Close(ctx.uictx);
             GamesBusiness.Enter(ctx.gameCtx);
         };
+
+        uiEvents.BuildManifest_OnBuildHandle = (int clickedTowerEntityID, int clickedTowerTypeID) => {
+            GamesBusiness.BuildManifest_OnBuild(ctx.gameCtx, clickedTowerEntityID, clickedTowerTypeID);
+        };
+
     }
 
     float restDT;

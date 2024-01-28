@@ -16,6 +16,8 @@ public static class GamesBusiness {
 
     }
 
+
+
     // 可能一帧有多次
     public static void FixedTick(GameCtx gameCtx, float fixdt) {
         // for Tower
@@ -61,6 +63,14 @@ public static class GamesBusiness {
     public static void LateTick(GameCtx ctx, float dt) {
         UIApp.PN_HearInfo_Update(ctx.uictx, ctx.playerEntity.hp);
         ctx.inputEntity.Reset();
+    }
+
+    //事假反馈
+    public static void BuildManifest_OnBuild(GameCtx ctx, int clickedTowerEntityID, int clickedTowerTypeID) {
+        // clickedTowerEntityID 表示: 基于谁, 造在哪里
+        // clickedTowerTypeID 表示造什么
+        Debug.Log("ffff");
+
     }
 }
 
