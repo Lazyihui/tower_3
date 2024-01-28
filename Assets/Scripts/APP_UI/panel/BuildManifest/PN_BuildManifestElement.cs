@@ -19,5 +19,9 @@ public class PN_BuildManifestElement : MonoBehaviour {
 
         this.priceTxt.text = price.ToString();
         this.icon.sprite = icon;
+
+        button.onClick.AddListener(() => {
+            Debug.Log("click " + clickedTowerEntityID);
+        });
     }
 }

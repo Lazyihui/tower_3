@@ -20,15 +20,28 @@ public class ClientMain : MonoBehaviour {
         Debug.Assert(worldCanvas != null);
 
         ctx = new ClientCtx();
+        //注入
         ctx.Inject(mainCamera, screenCanvas, worldCanvas);
+        // BindingEvents events
+        BindingEvents(ctx);
+
 
         AssetsInfra.Load(ctx.assetsCtx);
         TemplateInfra.Load(ctx.tplCtx);
 
-        UIApp.PN_Login_Open(ctx.uictx, () => {
+        UIApp.PN_Login_Open(ctx.uictx);
+
+
+    }
+
+    void BindingEvents(ClientCtx ctc) {
+
+        UIEvents uIEvents = ctx.uictx.events;
+
+        uIEvents.Login_OnStartClickHandle = () => {
             UIApp.PN_Login_Close(ctx.uictx);
             GamesBusiness.Enter(ctx.gameCtx);
-        });
+        };
     }
 
     float restDT;

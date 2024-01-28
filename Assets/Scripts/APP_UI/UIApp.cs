@@ -4,14 +4,16 @@ using UnityEngine.EventSystems;
 
 public static class UIApp {
 
-    public static void PN_Login_Open(UICtx uiCtx, Action OnstartClickHandle) {
+    public static void PN_Login_Open(UICtx uiCtx) {
         PN_Login panel = uiCtx.pn_Login;
         if (panel == null) {
             uiCtx.assetsCtx.Panel_TryGetPrefab("Login_Panel", out GameObject prefab);
             panel = GameObject.Instantiate(prefab, uiCtx.screenCanvas.transform).GetComponent<PN_Login>();
             panel.Ctor();
             uiCtx.pn_Login = panel;
-            panel.OnstartClickHandle = OnstartClickHandle;
+            panel.OnstartClickHandle = () => {
+                uiCtx.events.Login_OnClcikStart();
+            };
         }
         panel.Show();
 

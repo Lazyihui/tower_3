@@ -14,7 +14,11 @@ public class UICtx {
 
     public PN_BuildManifest pn_BuildManifest;
 
+    public UIEvents events;
+
     public UICtx() {
+
+        events = new UIEvents();
 
     }
 
