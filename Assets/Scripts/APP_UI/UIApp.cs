@@ -69,4 +69,12 @@ public static class UIApp {
         }
     }
 
+    public static void Panel_BulidManifast_Close(UICtx uiCtx) {
+        PN_BuildManifest panel = uiCtx.pn_BuildManifest;
+        if (panel != null) {
+            panel.TearDown();
+            uiCtx.pn_BuildManifest = null;
+        }
+    }
+
 }

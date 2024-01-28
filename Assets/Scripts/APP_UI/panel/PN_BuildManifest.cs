@@ -23,13 +23,14 @@ public class PN_BuildManifest : MonoBehaviour {
     }
 
     public void TearDown() {
+        GameObject.Destroy(gameObject);
         for (int i = 0; i < elements.Count; i++) {
             GameObject.Destroy(elements[i].gameObject);
         }
     }
     public void AddOption(int clickedTowerEntityID, int clickedTowerTypeID, int price, Sprite icon) {
         PN_BuildManifestElement ele = GameObject.Instantiate(elePrefab, btnGroup);
-        ele.Ctor(clickedTowerEntityID,clickedTowerTypeID,price,icon);
+        ele.Ctor(clickedTowerEntityID, clickedTowerTypeID, price, icon);
 
         elements.Add(ele);
     }

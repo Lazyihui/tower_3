@@ -12,6 +12,8 @@ public static class UserInterfaceDomain {
                 TowerEntity tower = towers[i];
                 if (PFPhysics.IsPointInsideRectangle(input.mouseWorldPos, tower.transform.position, tower.shapeSize)) {
                     Debug.Log("Tower isclick" + tower.name);
+
+                    UIApp.Panel_BulidManifast_Close(gameCtx.uictx);
                     // 打开建造面板 ：增添可建造面板的按钮
                     UIApp.PN_BuildManifest_Open(gameCtx.uictx, input.mouseWorldPos);
                     UIApp.PN_BuildManifest_AddOption(gameCtx.uictx, tower.id, tower.typeID);
