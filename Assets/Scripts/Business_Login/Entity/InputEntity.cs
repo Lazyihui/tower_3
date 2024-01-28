@@ -8,5 +8,11 @@ public class InputEntity {
 
     public bool isMouseLeftDown;
 
-    public  InputEntity(){}
+    public InputEntity() { }
+
+    public void Reset() {
+        mouseScreenPos = Vector2.zero;
+        mouseWorldPos = Vector2.zero;
+        isMouseLeftDown = false;
+    }
 }

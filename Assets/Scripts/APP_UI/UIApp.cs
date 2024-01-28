@@ -62,4 +62,11 @@ public static class UIApp {
         panel.Init(worldPos);
     }
 
+    public static void PN_BuildManifest_AddOption(UICtx uictx, int clickedTowerEntityID, int clickedTowerTypeID) {
+        PN_BuildManifest panel = uictx.pn_BuildManifest;
+        if (panel != null) {
+            panel.AddOption(clickedTowerEntityID, clickedTowerTypeID, 10, null);
+        }
+    }
+
 }

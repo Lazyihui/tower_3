@@ -60,6 +60,7 @@ public static class GamesBusiness {
 
     public static void LateTick(GameCtx ctx, float dt) {
         UIApp.PN_HearInfo_Update(ctx.uictx, ctx.playerEntity.hp);
+        ctx.inputEntity.Reset();
     }
 }
 

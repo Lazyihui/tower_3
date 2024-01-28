@@ -3,11 +3,11 @@ using UnityEngine;
 public class TowerEntity : MonoBehaviour {
 
     public int id;
+    public int typeID;
 
     //形状
     public Vector2 shapeSize;
 
-    public int typeID;
 
     public bool isSpawner; // 是否生成器
     public float cd; // cooldown 冷却时间
@@ -24,6 +24,8 @@ public class TowerEntity : MonoBehaviour {
     public SpriteRenderer sr;
 
     public void InitFakeData() {
+
+        typeID=100;
 
         shapeSize = new Vector2(1, 1);
         isSpawner = true;

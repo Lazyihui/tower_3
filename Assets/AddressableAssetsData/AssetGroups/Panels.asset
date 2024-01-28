@@ -35,8 +35,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Panels
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1c109245cbe056642a18e49a49fa8d3e
-    m_Address: Panel_BulidManifast
+  - m_GUID: d3e8af2ece3f5064e8498bd346365eeb
+    m_Address: Panel_BuildManifest
     m_ReadOnly: 0
     m_SerializedLabels:
     - Panels
