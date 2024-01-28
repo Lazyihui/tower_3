@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 576afb5c4b8cc0146ad52b6782eb83e0, type: 2}
   - {fileID: 11400000, guid: de43fca0f75531a49a1ff4baf64c6191, type: 2}
   - {fileID: 11400000, guid: 6171a08e3a1fa994bb394bb10d004e22, type: 2}
+  - {fileID: 11400000, guid: a1ba3702143b3fe4db4f9b7a6b4124a0, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -93,6 +94,7 @@ MonoBehaviour:
     - TM_Mst
     - Entities
     - Panels
+    - TM_Tower
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: ef13fdec8b4d8774795512f18d434500, type: 2}

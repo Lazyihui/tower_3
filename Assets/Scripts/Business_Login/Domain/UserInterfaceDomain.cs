@@ -15,13 +15,19 @@ public static class UserInterfaceDomain {
 
                     UIApp.Panel_BulidManifast_Close(gameCtx.uictx);
                     // 打开建造面板 ：增添可建造面板的按钮
-                    UIApp.PN_BuildManifest_Open(gameCtx.uictx, input.mouseWorldPos);
-                    UIApp.PN_BuildManifest_AddOption(gameCtx.uictx, tower.id, tower.typeID);
-                    UIApp.PN_BuildManifest_AddOption(gameCtx.uictx, tower.id, tower.typeID);
+                    bool has = gameCtx.tplCtx.towers.TryGetValue(tower.typeID, out TowerTM tm);
+                    Debug.Assert(has);
+                    if (tm.allowBuildTowerTypeIDs != null && tm.allowBuildTowerTypeIDs.Length > 0) {
 
+                        UIApp.PN_BuildManifest_Open(gameCtx.uictx, input.mouseWorldPos);
+                        for (int j = 0; j < tm.allowBuildTowerTypeIDs.Length; j++) {
+                            // 可建造的ID
+                            int allowBuildTowerTypeID = tm.allowBuildTowerTypeIDs[j];
 
+                            UIApp.PN_BuildManifest_AddOption(gameCtx.uictx, tower.id, allowBuildTowerTypeID);
 
-
+                        }
+                    }
 
                     input.isMouseLeftDown = false;
 

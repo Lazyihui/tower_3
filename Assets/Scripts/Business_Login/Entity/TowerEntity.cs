@@ -18,7 +18,7 @@ public class TowerEntity : MonoBehaviour {
     public float interval;
     public float intervalTimer;
 
-    public int MstTypeID;
+    public int mstTypeID;
     public Vector2[] path;
 
 
@@ -26,7 +26,7 @@ public class TowerEntity : MonoBehaviour {
 
     public void InitFakeData() {
 
-        typeID=100;
+        typeID = 100;
 
         shapeSize = new Vector2(1, 1);
         isSpawner = true;
@@ -36,7 +36,7 @@ public class TowerEntity : MonoBehaviour {
         maintainTimer = 3.01f;
         interval = 1;
         intervalTimer = 1;
-        MstTypeID = 100;
+        mstTypeID = 100;
         // 0, 5
         path = new Vector2[] {
             new Vector2(2, 5),

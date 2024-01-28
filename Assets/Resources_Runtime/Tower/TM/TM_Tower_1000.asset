@@ -10,17 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 347669ef303e9f941bcd225d21ee3be9, type: 3}
-  m_Name: TM_Tower_200
+  m_Name: TM_Tower_1000
   m_EditorClassIdentifier: 
-  typeID: 200
-  typeName: 
-  price: 20
+  typeID: 1000
+  typeName: "\u602A\u7269\u5DE2\u7A74"
+  price: 0
   shapeSize: {x: 1, y: 1}
   isSpawner: 0
-  cd: 0
-  maintain: 0
-  interval: 0
-  roleTypeID: 0
-  path: []
-  allowBuildTowerTypeIDs: 2c010000
+  cd: 1
+  maintain: 3.01
+  interval: 1
+  roleTypeID: 100
+  path:
+  - {x: 2, y: 3}
+  - {x: 2, y: 3}
+  - {x: 0, y: 3}
+  - {x: 0, y: -5}
+  allowBuildTowerTypeIDs: 
   sprite: {fileID: 0}

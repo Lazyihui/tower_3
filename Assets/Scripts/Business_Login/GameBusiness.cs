@@ -8,8 +8,10 @@ public static class GamesBusiness {
         gameCtx.playerEntity.hpMax = 5;
 
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
-
-        TowerDomain.Spawn(gameCtx, 1, new Vector2(0, 4), Color.blue);
+        //刷怪点
+        TowerDomain.Spawn(gameCtx, 1000, new Vector2(0, 4), Color.blue);
+        // 空地
+        TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0), Color.blue);
 
         //打开UI
         UIApp.PN_HeartInfo_Open(gameCtx.uictx, 5);

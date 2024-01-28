@@ -6,13 +6,33 @@ public static class TowerDomain {
 
         gameCtx.assetsCtx.Entity_TryGetPrefab("TowerEntity", out GameObject prefab);
 
+        bool has = gameCtx.tplCtx.towers.TryGetValue(typeID, out TowerTM tm);
+        if (!has) {
+            Debug.Log("Error");
+            return null;
+        }
         TowerEntity entity = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
+
 
         entity.Ctor();
         entity.SetPos(pos);
         entity.SetColor(color);
         entity.id = gameCtx.towerID++;
-        entity.InitFakeData();
+        entity.typeID = tm.typeID;
+        entity.price = tm.price;
+        entity.shapeSize = tm.shapeSize;
+
+        entity.isSpawner = tm.isSpawner;
+        entity.cd = tm.cd;
+        entity.cdMax = tm.cd;
+        entity.maintain = tm.maintain;
+        entity.maintainTimer = tm.maintain;
+        entity.interval = tm.interval;
+        entity.intervalTimer = tm.interval;
+        // entity.mstTypeID = tm.mstTypeID;
+        entity.path = tm.path;
+
+        // entity.SetSprite(tm.sprite);
 
 
         gameCtx.towerRepository.Add(entity);
@@ -34,7 +54,7 @@ public static class TowerDomain {
         if (tower.intervalTimer <= 0) {
 
             tower.intervalTimer = tower.interval;
-            MstEntity mst = MstDomain.Spawn(ctx, tower.MstTypeID, tower.transform.position);
+            MstEntity mst = MstDomain.Spawn(ctx, tower.mstTypeID, tower.transform.position);
             mst.path = tower.path;
         }
 
