@@ -11,6 +11,8 @@ public class UICtx {
 
     public AssetsCtx assetsCtx;
 
+    public TemplateCtx templateCtx;
+
 
     public PN_BuildManifest pn_BuildManifest;
 
@@ -22,10 +24,11 @@ public class UICtx {
 
     }
 
-    public void Inject(Canvas screenCanvas, AssetsCtx assetsCtx, Canvas worldCanvas) {
+    public void Inject(Canvas screenCanvas, AssetsCtx assetsCtx, Canvas worldCanvas, TemplateCtx templateCtx) {
         this.screenCanvas = screenCanvas;
         this.worldCanvas = worldCanvas;
         this.assetsCtx = assetsCtx;
+        this.templateCtx = templateCtx;
 
     }
 
