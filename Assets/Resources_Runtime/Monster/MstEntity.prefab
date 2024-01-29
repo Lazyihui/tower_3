@@ -49,7 +49,7 @@ MonoBehaviour:
   moveSpeed: 0
   path: []
   pathIndex: 0
-  sr: {fileID: 6635948726123037864}
+  srp: {fileID: 6635948726123037864}
 --- !u!1 &6205917848580798870
 GameObject:
   m_ObjectHideFlags: 0

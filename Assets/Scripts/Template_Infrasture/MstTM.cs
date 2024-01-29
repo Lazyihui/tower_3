@@ -7,7 +7,7 @@ public class MstTM : ScriptableObject {
 
     public float moveSpeed;
 
-    public Sprite spr; // 图片
+    public Sprite sprite;
 
 }
 

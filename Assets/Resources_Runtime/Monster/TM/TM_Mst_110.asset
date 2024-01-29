@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aedaddcd1a02a84ea6ab6deaadd0401, type: 3}
   m_Name: TM_Mst_110
   m_EditorClassIdentifier: 
-  typeID: 0
-  moveSpeed: 0
+  typeID: 200
+  moveSpeed: 4
+  sprite: {fileID: 21300000, guid: b371c6708a9f40945862f2ed07c132d3, type: 3}
