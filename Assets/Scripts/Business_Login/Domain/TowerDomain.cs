@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 public static class TowerDomain {
-    public static TowerEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos, Color color) {
+    public static TowerEntity Spawn(GameCtx gameCtx, int typeID, Vector2 pos) {
 
         gameCtx.assetsCtx.Entity_TryGetPrefab("TowerEntity", out GameObject prefab);
 
@@ -16,7 +16,7 @@ public static class TowerDomain {
 
         entity.Ctor();
         entity.SetPos(pos);
-        entity.SetColor(color);
+        // entity.SetColor(color);
         entity.id = gameCtx.towerID++;
         entity.typeID = tm.typeID;
         entity.price = tm.price;
@@ -32,7 +32,7 @@ public static class TowerDomain {
         // entity.mstTypeID = tm.mstTypeID;
         entity.path = tm.path;
 
-        // entity.SetSprite(tm.sprite);
+        entity.SetSprite(tm.sprite);
 
 
         gameCtx.towerRepository.Add(entity);

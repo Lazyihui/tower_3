@@ -22,42 +22,26 @@ public class TowerEntity : MonoBehaviour {
     public Vector2[] path;
 
 
-    public SpriteRenderer sr;
+    [SerializeField] SpriteRenderer srp;
 
-    public void InitFakeData() {
+    // public SpriteRenderer sr;
 
-        typeID = 100;
-
-        shapeSize = new Vector2(1, 1);
-        isSpawner = true;
-        cd = 1;
-        cdMax = 1;
-        maintain = 3;
-        maintainTimer = 3.01f;
-        interval = 1;
-        intervalTimer = 1;
-        mstTypeID = 100;
-        // 0, 5
-        path = new Vector2[] {
-            new Vector2(2, 5),
-            new Vector2(2, 3),
-            new Vector2(0, 3),
-            new Vector2(0, -5),
-        };
-    }
     public void Ctor() {
-        sr = GetComponent<SpriteRenderer>();
+        // sr = GetComponent<SpriteRenderer>();
     }
-    public void TearDown(){
+    public void TearDown() {
         Destroy(gameObject);
     }
 
-    public void SetColor(Color color) {
-        sr.color = color;
-    }
+    // public void SetColor(Color color) {
+    //     sr.color = color;
+    // }
 
     public void SetPos(Vector2 pos) {
         transform.position = pos;
+    }
+    public void SetSprite(Sprite sprite) {
+        srp.sprite = sprite;
     }
 
     void OnDrawGizmos() {

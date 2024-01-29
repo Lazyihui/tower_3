@@ -9,9 +9,9 @@ public static class GamesBusiness {
 
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
         //刷怪点
-        TowerDomain.Spawn(gameCtx, 1000, new Vector2(0, 4), Color.blue);
+        TowerDomain.Spawn(gameCtx, 1000, new Vector2(0, 4));
         // 空地
-        TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0), Color.blue);
+        TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
 
         //打开UI
         UIApp.PN_HeartInfo_Open(gameCtx.uictx, 5);
@@ -79,7 +79,7 @@ public static class GamesBusiness {
 
         Vector2 clickedPos = clickedTowerEntity.transform.position;
         TowerDomain.Unspawn(ctx, clickedTowerEntity);
-        TowerDomain.Spawn(ctx, clickedTowerTypeID, clickedPos, Color.gray);
+        TowerDomain.Spawn(ctx, clickedTowerTypeID, clickedPos);
         Debug.Log("towerID" + clickedTowerEntityID);
 
 
