@@ -20,7 +20,7 @@ MonoBehaviour:
   cd: 1
   maintain: 3.01
   interval: 1
-  roleTypeID: 100
+  mstTypeID: 100
   path:
   - {x: 2, y: 3}
   - {x: 2, y: 3}

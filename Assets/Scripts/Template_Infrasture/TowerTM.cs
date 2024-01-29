@@ -17,7 +17,7 @@ public class TowerTM : ScriptableObject {
     public float cd; // cooldown 冷却时间
     public float maintain; // 维持时间
     public float interval;
-    public int roleTypeID;
+    public int mstTypeID;
     public Vector2[] path;
 
     // 点击该类型塔时, 可建造的其他塔

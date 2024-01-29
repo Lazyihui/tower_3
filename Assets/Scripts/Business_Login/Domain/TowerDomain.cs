@@ -21,7 +21,7 @@ public static class TowerDomain {
         entity.typeID = tm.typeID;
         entity.price = tm.price;
         entity.shapeSize = tm.shapeSize;
-
+        entity.mstTypeID = tm.mstTypeID;
         entity.isSpawner = tm.isSpawner;
         entity.cd = tm.cd;
         entity.cdMax = tm.cd;
@@ -60,9 +60,9 @@ public static class TowerDomain {
         if (tower.intervalTimer <= 0) {
 
             Debug.Log("hhh");
-            
+
             tower.intervalTimer = tower.interval;
-            MstEntity mst = MstDomain.Spawn(ctx,100, tower.transform.position);
+            MstEntity mst = MstDomain.Spawn(ctx, tower.mstTypeID, tower.transform.position);
             mst.path = tower.path;
 
         }
