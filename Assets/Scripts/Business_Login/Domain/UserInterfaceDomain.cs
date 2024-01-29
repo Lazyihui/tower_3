@@ -13,7 +13,7 @@ public static class UserInterfaceDomain {
                 if (PFPhysics.IsPointInsideRectangle(input.mouseWorldPos, tower.transform.position, tower.shapeSize)) {
                     Debug.Log("Tower isclick" + tower.name);
 
-                    UIApp.Panel_BulidManifast_Close(gameCtx.uictx);
+                    UIApp.PN_BulidManifast_Close(gameCtx.uictx);
                     // 打开建造面板 ：增添可建造面板的按钮
                     bool has = gameCtx.tplCtx.towers.TryGetValue(tower.typeID, out TowerTM tm);
                     Debug.Assert(has);
@@ -27,9 +27,10 @@ public static class UserInterfaceDomain {
                             UIApp.PN_BuildManifest_AddOption(gameCtx.uictx, tower.id, allowBuildTowerTypeID);
 
                         }
-                    }
 
+                    }
                     input.isMouseLeftDown = false;
+
 
                     break;
                 }

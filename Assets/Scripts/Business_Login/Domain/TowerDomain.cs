@@ -38,6 +38,13 @@ public static class TowerDomain {
         gameCtx.towerRepository.Add(entity);
         return entity;
     }
+
+
+    public static void Unspawn(GameCtx ctx, TowerEntity tower) {
+        tower.TearDown();
+        ctx.towerRepository.Remove(tower);
+    }
+
     public static void TrySpawnMsts(GameCtx ctx, TowerEntity tower, float fixdt) {
         // 单个塔生成怪物
         if (!tower.isSpawner) {

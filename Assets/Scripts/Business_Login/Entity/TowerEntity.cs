@@ -48,6 +48,9 @@ public class TowerEntity : MonoBehaviour {
     public void Ctor() {
         sr = GetComponent<SpriteRenderer>();
     }
+    public void TearDown(){
+        Destroy(gameObject);
+    }
 
     public void SetColor(Color color) {
         sr.color = color;

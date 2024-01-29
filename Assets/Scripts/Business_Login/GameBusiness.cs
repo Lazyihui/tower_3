@@ -71,7 +71,19 @@ public static class GamesBusiness {
     public static void BuildManifest_OnBuild(GameCtx ctx, int clickedTowerEntityID, int clickedTowerTypeID) {
         // clickedTowerEntityID 表示: 基于谁, 造在哪里
         // clickedTowerTypeID 表示造什么
-        Debug.Log("ffff");
+        bool has = ctx.towerRepository.TryGet(clickedTowerEntityID, out TowerEntity clickedTowerEntity);
+        if (!has) {
+            Debug.Log("err");
+            return;
+        }
+
+        Vector2 clickedPos = clickedTowerEntity.transform.position;
+        TowerDomain.Unspawn(ctx, clickedTowerEntity);
+        TowerDomain.Spawn(ctx, clickedTowerTypeID, clickedPos, Color.gray);
+        Debug.Log("towerID" + clickedTowerEntityID);
+
+
+        UIApp.PN_BulidManifast_Close(ctx.uictx);
 
     }
 }

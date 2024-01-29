@@ -7,7 +7,7 @@ public class TowerRepository {
 
     TowerEntity[] tempArray;
 
-// 初始化
+    // 初始化
     public TowerRepository() {
         all = new Dictionary<int, TowerEntity>();
         tempArray = new TowerEntity[20];
@@ -30,10 +30,17 @@ public class TowerRepository {
         return null;
 
 
-
-
-
     }
+
+
+    public bool TryGet(int entityID, out TowerEntity entity) {
+        return all.TryGetValue(entityID, out entity);
+    }
+
+public void Remove(TowerEntity tower){
+    all.Remove(tower.id);
+}
+
     public int TakeAll(out TowerEntity[] array) {
         all.Values.CopyTo(tempArray, 0);
         array = tempArray;
