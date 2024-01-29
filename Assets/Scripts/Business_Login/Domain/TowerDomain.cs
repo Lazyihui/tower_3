@@ -51,18 +51,18 @@ public static class TowerDomain {
             return;
         }
 
-        tower.cd -= fixdt; // 0.2 0.3
+        tower.cd -= fixdt;
         if (tower.cd > 0) {
             return;
         }
         //生成时间
         tower.intervalTimer -= fixdt;
-
         if (tower.intervalTimer <= 0) {
 
             tower.intervalTimer = tower.interval;
             MstEntity mst = MstDomain.Spawn(ctx, tower.mstTypeID, tower.transform.position);
             mst.path = tower.path;
+
         }
 
         tower.maintainTimer -= fixdt;

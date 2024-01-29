@@ -16,7 +16,7 @@ MonoBehaviour:
   typeName: "\u602A\u7269\u5DE2\u7A74"
   price: 0
   shapeSize: {x: 1, y: 1}
-  isSpawner: 0
+  isSpawner: 1
   cd: 1
   maintain: 3.01
   interval: 1

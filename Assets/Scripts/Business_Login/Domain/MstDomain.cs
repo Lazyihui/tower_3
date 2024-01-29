@@ -15,7 +15,6 @@ public static class MstDomain {
         entity.moveSpeed = mstTM.moveSpeed;
         entity.Init(mstTM.spr);
         gameCtx.mstRepository.Add(entity);
-        Debug.Log("生成的mst" + typeID);
         return entity;
     }
 
@@ -48,6 +47,7 @@ public static class MstDomain {
 
     public static void OverlapFlag(GameCtx ctx, MstEntity mst) {
         // 找到所有Flag, 并且与Role碰撞
+
         FlagEntity target = ctx.flagRepository.Find((FlagEntity flag) => {
             float disSqr = Vector2.SqrMagnitude((Vector2)mst.transform.position - (Vector2)flag.transform.position);
             if (disSqr < 0.1f) {
@@ -58,6 +58,9 @@ public static class MstDomain {
         });
 
         if (target != null) {
+
+            Debug.Log("a");
+
             UnSpawn(ctx, mst);
             PlayerDomain.Hurt(ctx, ctx.playerEntity, 1);
         }

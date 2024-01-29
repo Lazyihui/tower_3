@@ -14,7 +14,7 @@ public static class GamesBusiness {
         TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
 
         //打开UI
-        UIApp.PN_HeartInfo_Open(gameCtx.uictx, 5);
+        UIApp.PN_HeartInfo_Open(gameCtx.uictx, gameCtx.playerEntity.hp);
 
     }
 
@@ -25,8 +25,8 @@ public static class GamesBusiness {
         // for Tower
         int towerLen = gameCtx.towerRepository.TakeAll(out TowerEntity[] towers);
         for (int i = 0; i < towerLen; i += 1) {
-
             TowerEntity tower = towers[i];
+
             TowerDomain.TrySpawnMsts(gameCtx, tower, fixdt);
         }
         // for mst

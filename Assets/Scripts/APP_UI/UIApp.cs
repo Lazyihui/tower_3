@@ -72,7 +72,8 @@ public static class UIApp {
         PN_BuildManifest panel = uictx.pn_BuildManifest;
         if (panel != null) {
             // tpl加icon
-            panel.AddOption(clickedTowerEntityID, clickedTowerTypeID, 10, null);
+            uictx.templateCtx.towers.TryGetValue(clickedTowerTypeID,out TowerTM tm);
+            panel.AddOption(clickedTowerEntityID, clickedTowerTypeID, tm.price , tm.sprite);
         }
     }
 
