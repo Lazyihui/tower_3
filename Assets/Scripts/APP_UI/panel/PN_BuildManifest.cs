@@ -20,10 +20,10 @@ public class PN_BuildManifest : MonoBehaviour {
 
     }
 
-    public void Init(Vector3 worldPos,Vector2 pos) {
+    public void Init(Vector3 worldPos) {
         SetWorldPos(worldPos);
         show();
-        transform.position = pos;
+        
     }
 
     public void TearDown() {
