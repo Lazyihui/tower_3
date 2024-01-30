@@ -16,6 +16,9 @@ public static class TowerDomain {
 
         entity.Ctor();
         entity.SetPos(pos);
+
+        tm.uiPos = new Vector2(pos.x - 1, pos.y - 1);
+
         // entity.SetColor(color);
         entity.id = gameCtx.towerID++;
         entity.typeID = tm.typeID;
@@ -29,6 +32,7 @@ public static class TowerDomain {
         entity.maintainTimer = tm.maintain;
         entity.interval = tm.interval;
         entity.intervalTimer = tm.interval;
+
         // entity.mstTypeID = tm.mstTypeID;
         entity.path = tm.path;
 

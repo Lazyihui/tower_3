@@ -18,13 +18,14 @@ public static class UserInterfaceDomain {
                     bool has = gameCtx.tplCtx.towers.TryGetValue(tower.typeID, out TowerTM tm);
                     Debug.Assert(has);
                     if (tm.allowBuildTowerTypeIDs != null && tm.allowBuildTowerTypeIDs.Length > 0) {
+                        Vector2 pos = tm.uiPos;
 
-                        UIApp.PN_BuildManifest_Open(gameCtx.uictx, input.mouseWorldPos);
+                        UIApp.PN_BuildManifest_Open(gameCtx.uictx, input.mouseWorldPos, pos);
                         for (int j = 0; j < tm.allowBuildTowerTypeIDs.Length; j++) {
                             // 可建造的ID
                             int allowBuildTowerTypeID = tm.allowBuildTowerTypeIDs[j];
-
                             UIApp.PN_BuildManifest_AddOption(gameCtx.uictx, tower.id, allowBuildTowerTypeID);
+
 
                         }
 

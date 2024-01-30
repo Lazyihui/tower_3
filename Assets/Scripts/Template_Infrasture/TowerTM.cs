@@ -12,6 +12,8 @@ public class TowerTM : ScriptableObject {
     public int price;
     public Vector2 shapeSize;
 
+    public Vector2 uiPos;
+
     [Header("Spawner")]
     public bool isSpawner;
     public float cd; // cooldown 冷却时间

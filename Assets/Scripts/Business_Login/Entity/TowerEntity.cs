@@ -6,6 +6,7 @@ public class TowerEntity : MonoBehaviour {
     public int typeID;
     public int price;
 
+
     //形状
     public Vector2 shapeSize;
 

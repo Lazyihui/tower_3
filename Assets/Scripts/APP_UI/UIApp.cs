@@ -52,7 +52,7 @@ public static class UIApp {
 
     //PN_BuildManifest
     //面板打开（基本上都是这么写）
-    public static void PN_BuildManifest_Open(UICtx uiCtx, Vector3 worldPos) {
+    public static void PN_BuildManifest_Open(UICtx uiCtx, Vector3 worldPos, Vector2 towerUIPos) {
         PN_BuildManifest panel = uiCtx.pn_BuildManifest;
         if (panel == null) {
             uiCtx.assetsCtx.Panel_TryGetPrefab("Panel_BulidManifast", out GameObject prefab);
@@ -65,15 +65,16 @@ public static class UIApp {
             };
 
         }
-        panel.Init(worldPos);
+
+        panel.Init(worldPos, towerUIPos);
     }
 
     public static void PN_BuildManifest_AddOption(UICtx uictx, int clickedTowerEntityID, int clickedTowerTypeID) {
         PN_BuildManifest panel = uictx.pn_BuildManifest;
         if (panel != null) {
             // tpl加icon
-            uictx.templateCtx.towers.TryGetValue(clickedTowerTypeID,out TowerTM tm);
-            panel.AddOption(clickedTowerEntityID, clickedTowerTypeID, tm.price , tm.sprite);
+            uictx.templateCtx.towers.TryGetValue(clickedTowerTypeID, out TowerTM tm);
+            panel.AddOption(clickedTowerEntityID, clickedTowerTypeID, tm.price, tm.sprite);
         }
     }
 

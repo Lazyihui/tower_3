@@ -17,11 +17,13 @@ public class PN_BuildManifest : MonoBehaviour {
 
     public void Ctor() {
         elements = new List<PN_BuildManifestElement>();
+
     }
 
-    public void Init(Vector3 worldPos) {
+    public void Init(Vector3 worldPos,Vector2 pos) {
         SetWorldPos(worldPos);
         show();
+        transform.position = pos;
     }
 
     public void TearDown() {

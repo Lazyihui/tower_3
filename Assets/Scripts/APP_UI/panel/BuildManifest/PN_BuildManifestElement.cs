@@ -9,6 +9,7 @@ public class PN_BuildManifestElement : MonoBehaviour {
     public int clickedTowerEntityID;
     public int clickedTowerTypeID;
 
+
     //显示
     [SerializeField] Text priceTxt;
     [SerializeField] Image icon;

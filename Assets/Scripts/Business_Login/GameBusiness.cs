@@ -10,6 +10,7 @@ public static class GamesBusiness {
         FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
         //刷怪点
         TowerDomain.Spawn(gameCtx, 1000, new Vector2(0, 4));
+
         // 空地
         TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
 
@@ -76,10 +77,13 @@ public static class GamesBusiness {
             Debug.Log("err");
             return;
         }
-
+        //clcikedPos 新生成tower的Pos
         Vector2 clickedPos = clickedTowerEntity.transform.position;
+        //销毁原来的Tower生成新的tower
         TowerDomain.Unspawn(ctx, clickedTowerEntity);
+
         TowerDomain.Spawn(ctx, clickedTowerTypeID, clickedPos);
+
         Debug.Log("towerID" + clickedTowerEntityID);
 
 
