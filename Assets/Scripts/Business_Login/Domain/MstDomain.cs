@@ -7,7 +7,6 @@ public static class MstDomain {
         if (!has) {
             Debug.LogError("on find" + typeID);
         }
-        Debug.Log("aa");
         gameCtx.assetsCtx.Entity_TryGetPrefab("MstEntity", out GameObject prefab);
         MstEntity entity = GameObject.Instantiate(prefab).GetComponent<MstEntity>();
         entity.Ctor();
@@ -60,7 +59,6 @@ public static class MstDomain {
 
         if (target != null) {
 
-            Debug.Log("a");
 
             UnSpawn(ctx, mst);
             PlayerDomain.Hurt(ctx, ctx.playerEntity, 1);
