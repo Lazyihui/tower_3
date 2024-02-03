@@ -10,9 +10,14 @@ public class GameCtx {
     public MstRepository mstRepository;
     public int mstID;
 
+    public MoveRepository moveRepository;
+    public int moveID;
+
     public PlayerEntity playerEntity;
 
     public InputEntity inputEntity;
+
+    public MoveEntity moveEntity;
 
     public UICtx uictx;
 
@@ -32,7 +37,11 @@ public class GameCtx {
 
         mstRepository = new MstRepository();
 
+        moveRepository = new MoveRepository();
+
         playerEntity = new PlayerEntity();
+
+        moveEntity = new MoveEntity();
 
         inputEntity = new InputEntity();
 

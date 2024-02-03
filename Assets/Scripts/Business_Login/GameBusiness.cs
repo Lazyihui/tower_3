@@ -14,6 +14,11 @@ public static class GamesBusiness {
         // 空地
         TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
 
+        //move
+
+        MoveDomain.Spawn(gameCtx, 1, new Vector2(0, 0));
+        
+
         //打开UI
         UIApp.PN_HeartInfo_Open(gameCtx.uictx, gameCtx.playerEntity.hp);
 

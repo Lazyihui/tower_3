@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using LazyBinary;
 public class ClientMain : MonoBehaviour {
     // Start is called before the first frame update
     ClientCtx ctx;
 
     void Start() {
+
+        BinaryWriter.Yo();
+
 
         Application.targetFrameRate = 120;
 

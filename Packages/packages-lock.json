@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.lazyihui.lazybinary": {
+      "version": "ssh://git@github.com/Lazyihui/LazyBinary.git?path=Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "da84cd2048f7bee2581b6f9fd57754207a7461cf"
+    },
     "com.unity.2d.animation": {
       "version": "10.0.3",
       "depth": 1,
