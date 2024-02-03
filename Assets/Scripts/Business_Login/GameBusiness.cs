@@ -14,10 +14,13 @@ public static class GamesBusiness {
         // // 空地
         // TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
 
-        //move
+        //move 
 
-        MoveDomain.Spawn(gameCtx, 1, new Vector2(0, 0));
 
+
+        MoveEntity entity = MoveDomain.Spawn(gameCtx, 1, new Vector2(0, 0));
+
+        gameCtx.ownerMoveEntityId = entity.id;
 
 
         //打开UI
@@ -68,8 +71,12 @@ public static class GamesBusiness {
 
         //move
         Vector2 moveAxis = gameCtx.inputEntity.ProcessMoveInput();
+        
+        MoveEntity entity;
 
-        gameCtx.moveEntity.Move(moveAxis.x, moveAxis.y, dt);
+        gameCtx.moveRepository.TryGet(gameCtx.ownerMoveEntityId, out entity);
+
+        entity.Move(moveAxis.x, moveAxis.y, dt);
 
     }
 

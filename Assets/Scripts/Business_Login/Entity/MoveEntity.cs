@@ -6,6 +6,8 @@ public class MoveEntity : MonoBehaviour {
     public int id;
 
     public float moveSpeed;
+
+    
     public void Ctor() {
     }
 
@@ -15,11 +17,11 @@ public class MoveEntity : MonoBehaviour {
         transform.position = pos;
     }
 
-    public void Move(float x, float y, float dt) {
+    public void Move(float x, float z, float dt) {
 
-        Vector2 moveInput = new Vector2(x, y);
+        Vector3 moveInput = new Vector3(x, 0, z);
 
-        Vector2 pos = this.transform.position;
+        Vector3 pos = this.transform.position;
 
         pos += moveInput * moveSpeed * dt;
 

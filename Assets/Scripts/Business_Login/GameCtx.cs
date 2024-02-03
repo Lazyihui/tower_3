@@ -1,6 +1,8 @@
 using UnityEngine;
 public class GameCtx {
 
+    public int ownerMoveEntityId;
+
     public FlagRepository flagRepository;
     public int flagID;
 
@@ -17,7 +19,6 @@ public class GameCtx {
 
     public InputEntity inputEntity;
 
-    public MoveEntity moveEntity;
 
     public UICtx uictx;
 
@@ -41,8 +42,6 @@ public class GameCtx {
 
         playerEntity = new PlayerEntity();
 
-        moveEntity = new MoveEntity();
-
         inputEntity = new InputEntity();
 
 
@@ -51,6 +50,8 @@ public class GameCtx {
         flagID = 0;
         towerID = 0;
         mstID = 0;
+        moveID = 0;
+
     }
 
     public void Inject(Camera camera, UICtx uictx, AssetsCtx assetsCtx, TemplateCtx tplCtx) {

@@ -34,4 +34,8 @@ public class MoveRepository {
         array = tempArray;
         return all.Count;
     }
+
+    public bool TryGet(int id, out MoveEntity entity) {
+        return all.TryGetValue(id, out entity);
+    }
 }

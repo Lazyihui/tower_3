@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  moveSpeed: 10
 --- !u!1 &7697663828666747268
 GameObject:
   m_ObjectHideFlags: 0
