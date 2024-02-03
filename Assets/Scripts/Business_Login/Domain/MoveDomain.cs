@@ -9,6 +9,7 @@ public static class MoveDomain {
         MoveEntity entity = GameObject.Instantiate(prefab).GetComponent<MoveEntity>();
         entity.Ctor();
         entity.SetPos(pos);
+        entity.moveSpeed = 10.0f;
 
         gameCtx.moveRepository.Add(entity);
 

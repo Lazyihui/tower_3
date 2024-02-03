@@ -4,20 +4,21 @@ using UnityEngine;
 public static class GamesBusiness {
     public static void Enter(GameCtx gameCtx) {
 
-        gameCtx.playerEntity.hp = 5;
-        gameCtx.playerEntity.hpMax = 5;
+        // gameCtx.playerEntity.hp = 5;
+        // gameCtx.playerEntity.hpMax = 5;
 
-        FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
-        //刷怪点
-        TowerDomain.Spawn(gameCtx, 1000, new Vector2(0, 4));
+        // FlagDomain.Spawn(gameCtx, 1, new Vector2(0, -4), Color.yellow);
+        // //刷怪点
+        // TowerDomain.Spawn(gameCtx, 1000, new Vector2(0, 4));
 
-        // 空地
-        TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
+        // // 空地
+        // TowerDomain.Spawn(gameCtx, 100, new Vector2(-1, 0));
 
         //move
 
         MoveDomain.Spawn(gameCtx, 1, new Vector2(0, 0));
-        
+
+
 
         //打开UI
         UIApp.PN_HeartInfo_Open(gameCtx.uictx, gameCtx.playerEntity.hp);
@@ -64,6 +65,11 @@ public static class GamesBusiness {
         // for Flag
 
         // for Role
+
+        //move
+        Vector2 moveAxis = gameCtx.inputEntity.ProcessMoveInput();
+
+        gameCtx.moveEntity.Move(moveAxis.x, moveAxis.y, dt);
 
     }
 
